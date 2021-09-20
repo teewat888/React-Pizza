@@ -1,14 +1,25 @@
-import React from "react"
+import React from "react";
 
-const Pizza = () => {
-  return(
+const Pizza = ({ topping, size, vegetarian, fillEditForm, pizza }) => {
+  const handleOnClick = () => {
+    fillEditForm(pizza);
+  };
+  return (
     <tr>
-      <td>{"Replace Me With Pizza Topping"}</td>
-      <td>{"Replace Me With Pizza Size"}</td>
-      <td>{"Replace Me With Vegatarian"}</td>
-      <td><button type="button" className="btn btn-primary">Edit Pizza</button></td>
+      <td>{topping}</td>
+      <td>{size}</td>
+      <td>{vegetarian ? "Yes" : "No"}</td>
+      <td>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={handleOnClick}
+        >
+          Edit Pizza
+        </button>
+      </td>
     </tr>
-  )
-}
+  );
+};
 
-export default Pizza
+export default Pizza;
